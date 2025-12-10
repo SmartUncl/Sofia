@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Новогодний прайс-лист • Наращивание ресниц • 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-main: #fbe9f3;
+      --bg-secondary: #ffeaf0;
+      --accent: #f5a9c7;
+      --accent-strong: #ff4f8e;
+      --text-main: #3c2436;
+      --text-soft: #7f5c76;
+      --glass-bg: rgba(255, 255, 255, 0.26);
+      --glass-border: rgba(255, 255, 255, 0.7);
+      --shadow-soft: 0 24px 50px rgba(166, 84, 132, 0.23);
+      --radius-xl: 28px;
+      --radius-full: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at 10% 0%, #ffe1ed 0, rgba(255, 225, 237, 0) 45%),
+        radial-gradient(circle at 90% 15%, #ffeef9 0, rgba(255, 238, 249, 0) 45%),
+        radial-gradient(circle at 15% 85%, #ffd9ea 0, rgba(255, 217, 234, 0) 50%),
+        linear-gradient(135deg, #f7cfe2 0%, #f9e8f2 40%, #fbeef7 100%);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .wrapper {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      z-index: 1;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,255,255,0.1));
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 12px 30px rgba(191, 120, 160, 0.2);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff, #ffb3d0);
+    }
+
+    h1 {
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      max-width: 540px;
+      color: var(--text-soft);
+    }
+
+    .subtitle strong {
+      color: var(--accent-strong);
+      font-weight: 600;
+    }
+
+    .year-pill {
+      margin-top: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(18px);
+    }
+
+    .year-pill span {
+      font-weight: 600;
+    }
+
+    /* Tabs */
+
+    .tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.32);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 18px 35px rgba(187, 109, 155, 0.25);
+      backdrop-filter: blur(22px);
+      max-width: 520px;
+      margin-top: 8px;
+    }
+
+    .tab-button {
+      flex: 1;
+      border-radius: var(--radius-full);
+      border: none;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      background: transparent;
+      color: var(--text-soft);
+      cursor: pointer;
+      position: relative;
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .tab-button:hover {
+      transform: translateY(-1px);
+    }
+
+    .tab-button.active {
+      background: radial-gradient(circle at 10% 0%, #ffeaf3 0, transparent 55%),
+                  linear-gradient(135deg, #ffd6ea, #fcb7d2);
+      color: var(--text-main);
+      box-shadow: 0 12px 30px rgba(189, 110, 156, 0.35);
+    }
+
+    main {
+      margin-top: 8px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 24px;
+    }
+
+    .tab-content {
+      display: none;
+      grid-column: 1 / -1;
+    }
+    .tab-content.active {
+      display: contents; /* чтобы секции могли занимать свои колонки */
+    }
+
+    .glass-card {
+      border-radius: var(--radius-xl);
+      padding: 22px 24px 24px;
+      background: radial-gradient(circle at 0% 0%, rgba(255,255,255,0.7), rgba(255,255,255,0.15));
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(22px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(255, 182, 209, 0.15));
+      right: -80px;
+      top: -80px;
+      opacity: 0.6;
+      filter: blur(2px);
+    }
+
+    .glass-card::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.7), rgba(255, 165, 204, 0));
+      left: -120px;
+      bottom: -120px;
+      opacity: 0.7;
+    }
+
+    .glass-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .price-card {
+      grid-column: 1 / 2;
+    }
+
+    .price-title {
+      font-size: 20px;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .price-subtitle {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .price-table thead {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--text-soft);
+    }
+
+    .price-table th,
+    .price-table td {
+      text-align: left;
+      padding: 8px 2px;
+    }
+
+    .price-table tbody tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .price-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .price-name {
+      font-weight: 500;
+    }
+
+    .price-value {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      font-weight: 500;
+    }
+
+    .price-value span {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-left: 2px;
+    }
+
+    .note-row {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--text-soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .note-row strong {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .note-chip {
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.9);
+      font-size: 12px;
+    }
+
+    .cta-row {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cta-button {
+      border-radius: var(--radius-full);
+      border: none;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ffbad5, #ff4f8e);
+      color: #fff;
+      box-shadow: 0 18px 33px rgba(199, 83, 137, 0.55);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.14s ease, box-shadow 0.14s ease, filter 0.2s ease;
+    }
+
+    .cta-button span {
+      font-size: 18px;
+      transform: translateY(1px);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+      box-shadow: 0 22px 40px rgba(199, 83, 137, 0.6);
+    }
+
+    .cta-note {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    /* Master card */
+
+    .master-card {
+      grid-column: 2 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .master-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .master-photo {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 26px 45px rgba(125, 71, 113, 0.6);
+      isolation: isolate;
+    }
+
+    .master-photo::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0% 0%, rgba(255,255,255,0.45), transparent 55%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .master-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.04);
+    }
+
+    .master-label {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 8px 13px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: var(--radius-full);
+      background: rgba(14, 7, 11, 0.55);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(18px);
+    }
+
+    .master-label-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff, #ffd0e6);
+    }
+
+    .master-text h2 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .master-text p {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .master-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .tag-pill {
+      padding: 6px 10px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.9);
+    }
+
+    /* Info card */
+
+    .info-card {
+      grid-column: 1 / 3;
+    }
+
+    .info-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 20px;
+    }
+
+    .info-card h2 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .info-card p {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+
+    .info-list {
+      font-size: 13px;
+      list-style: none;
+      display: grid;
+      gap: 6px;
+    }
+
+    .info-list li::before {
+      content: "✧";
+      margin-right: 6px;
+      color: var(--accent-strong);
+    }
+
+    .info-box {
+      font-size: 12px;
+      padding: 10px 12px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.9);
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    footer {
+      margin-top: 16px;
+      font-size: 11px;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Snowflakes */
+
+    .snowflakes {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .snowflake {
+      position: absolute;
+      top: -10%;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 12px;
+      text-shadow: 0 0 6px rgba(255,255,255,0.85);
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translate3d(0, -10%, 0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate3d(0, 120vh, 0) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* разные позиции и скорости */
+
+    .snowflake:nth-child(1) { left: 4%;  animation-duration: 18s; animation-delay: 0s; }
+    .snowflake:nth-child(2) { left: 16%; animation-duration: 22s; animation-delay: 2s; }
+    .snowflake:nth-child(3) { left: 28%; animation-duration: 19s; animation-delay: 4s; }
+    .snowflake:nth-child(4) { left: 40%; animation-duration: 24s; animation-delay: 1s; }
+    .snowflake:nth-child(5) { left: 52%; animation-duration: 21s; animation-delay: 3s; }
+    .snowflake:nth-child(6) { left: 64%; animation-duration: 26s; animation-delay: 5s; }
+    .snowflake:nth-child(7) { left: 76%; animation-duration: 23s; animation-delay: 1.5s; }
+    .snowflake:nth-child(8) { left: 88%; animation-duration: 25s; animation-delay: 4.5s; }
+    .snowflake:nth-child(9) { left: 12%; animation-duration: 27s; animation-delay: 6s; }
+    .snowflake:nth-child(10){ left: 36%; animation-duration: 20s; animation-delay: 7s; }
+    .snowflake:nth-child(11){ left: 60%; animation-duration: 22s; animation-delay: 8s; }
+    .snowflake:nth-child(12){ left: 84%; animation-duration: 19s; animation-delay: 9s; }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .price-card,
+      .master-card {
+        grid-column: 1 / -1;
+      }
+      .info-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrapper {
+        padding: 20px 14px 40px;
+      }
+
+      header {
+        align-items: flex-start;
+      }
+
+      .tabs {
+        width: 100%;
+        overflow: auto;
+      }
+
+      .glass-card {
+        padding: 18px 16px 20px;
+        border-radius: 24px;
+      }
+
+      .master-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .master-photo {
+        max-width: 260px;
+        margin: 0 auto;
+      }
+
+      .cta-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Снежинки -->
+  <div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">✻</div>
+    <div class="snowflake">✼</div>
+    <div class="snowflake">✻</div>
+    <div class="snowflake">✼</div>
+    <div class="snowflake">✻</div>
+    <div class="snowflake">✼</div>
+    <div class="snowflake">✻</div>
+    <div class="snowflake">✼</div>
+    <div class="snowflake">✻</div>
+    <div class="snowflake">✼</div>
+    <div class="snowflake">✻</div>
+    <div class="snowflake">✼</div>
+  </div>
+
+  <div class="wrapper">
+    <header>
+      <div class="brand">
+        <div class="brand-dot"></div>
+        <span>Lash Studio • Sophie</span>
+      </div>
+      <h1>Новогодний прайс-лист&nbsp;на наращивание ресниц</h1>
+      <p class="subtitle">
+        Нежный люксовый образ к праздникам: записывайтесь на новогоднее наращивание,
+        чтобы встретить <strong>Новый&nbsp;год&nbsp;2026</strong> с идеальными ресницами.
+      </p>
+      <div class="year-pill">
+        <span>New Year 2026</span> · Winter limited edition ❄
+      </div>
+
+      <div class="tabs" role="tablist">
+        <button class="tab-button active" data-tab="price" role="tab" aria-selected="true">
+          Прайс
+        </button>
+        <button class="tab-button" data-tab="master" role="tab" aria-selected="false">
+          О мастере
+        </button>
+        <button class="tab-button" data-tab="info" role="tab" aria-selected="false">
+          Подготовка / условия
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- ПРАЙС -->
+      <section class="tab-content active" id="price">
+        <article class="glass-card price-card">
+          <div class="glass-inner">
+            <h2 class="price-title">Прайс на наращивание ресниц</h2>
+            <p class="price-subtitle">Новогодние записи действуют по фиксированным ценам ниже.</p>
+
+            <table class="price-table">
+              <thead>
+                <tr>
+                  <th>Объем</th>
+                  <th class="price-value">Стоимость</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="price-name">Классика</td>
+                  <td class="price-value">1700 <span>₽</span></td>
+                </tr>
+                <tr>
+                  <td class="price-name">1.5D</td>
+                  <td class="price-value">1800 <span>₽</span></td>
+                </tr>
+                <tr>
+                  <td class="price-name">2D</td>
+                  <td class="price-value">1900 <span>₽</span></td>
+                </tr>
+                <tr>
+                  <td class="price-name">2.5D</td>
+                  <td class="price-value">2000 <span>₽</span></td>
+                </tr>
+                <tr>
+                  <td class="price-name">3D</td>
+                  <td class="price-value">2100 <span>₽</span></td>
+                </tr>
+                <tr>
+                  <td class="price-name">3.5D</td>
+                  <td class="price-value">2200 <span>₽</span></td>
+                </tr>
+                <tr>
+                  <td class="price-name">4D</td>
+                  <td class="price-value">2300 <span>₽</span></td>
+                </tr>
+                <tr>
+                  <td class="price-name">5D</td>
+                  <td class="price-value">2500 <span>₽</span></td>
+                </tr>
+                <tr>
+                  <td class="price-name">6D</td>
+                  <td class="price-value">2700 <span>₽</span></td>
+                </tr>
+                <tr>
+                  <td class="price-name">7D</td>
+                  <td class="price-value">2900 <span>₽</span></td>
+                </tr>
+                <tr>
+                  <td class="price-name">8D</td>
+                  <td class="price-value">3100 <span>₽</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="note-row">
+              <div>Снятие чужой работы — <strong>300 ₽</strong></div>
+              <div class="note-chip">Снятие своей работы включено в коррекцию</div>
+            </div>
+
+            <div class="cta-row">
+              <button class="cta-button">
+                Записаться на ресницы
+                <span>➝</span>
+              </button>
+              <div class="cta-note">
+                Для записи напишите в удобный мессенджер или позвоните —
+                время подберём под праздники.
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- О МАСТЕРЕ -->
+      <section class="tab-content" id="master">
+        <article class="glass-card master-card">
+          <div class="glass-inner master-layout">
+            <div class="master-photo">
+              <!-- Положите файл с вашим фото рядом с HTML и назовите его sofi.jpg -->
+              <img src="sofi.jpg" alt="Мастер по наращиванию ресниц Софи" />
+              <div class="master-label">
+                <span class="master-label-dot"></span>
+                <span>Мастер Софи</span>
+              </div>
+            </div>
+            <div class="master-text">
+              <h2>Софи — ваш новогодний лэш-дизайнер</h2>
+              <p>
+                Аккуратное, женственное наращивание без перегруза века и «тяжёлого»
+                эффекта. Каждая работа подбирается под форму глаз, образ и пожелания,
+                чтобы ресницы выглядели дорого и естественно.
+              </p>
+              <p>
+                Для Нового&nbsp;года 2026 Софи подготовит для вас образ,
+                который сохранит свежесть взгляда на всём празднике —
+                от семейных ужинов до ночных салютов.
+              </p>
+              <div class="master-tags">
+                <span class="tag-pill">Натуральный люксовый эффект</span>
+                <span class="tag-pill">Гипоаллергенные материалы</span>
+                <span class="tag-pill">Уютная студия &amp; soft-light</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ПОДГОТОВКА / УСЛОВИЯ -->
+      <section class="tab-content" id="info">
+        <article class="glass-card info-card">
+          <div class="glass-inner info-layout">
+            <div>
+              <h2>Как подготовиться к процедуре</h2>
+              <p>Небольшие советы, чтобы ресницы носились комфортно и долго:</p>
+              <ul class="info-list">
+                <li>Приходите без макияжа глаз и без крема в зоне век.</li>
+                <li>За 24 часа до процедуры не используйте масляные средства для лица.</li>
+                <li>Планируйте время: на наращивание закладывается в среднем 2–3 часа.</li>
+                <li>Если есть чувствительность к клею — заранее сообщите мастеру.</li>
+              </ul>
+            </div>
+            <div class="info-box">
+              <strong>Условия новогодней записи:</strong><br /><br />
+              — Бронирование времени подтверждается предоплатой (по договорённости).<br />
+              — Опоздание более чем на 15 минут может сократить объём работы.<br />
+              — Если планы изменились, предупредите как можно раньше — так другое
+              желание на красивые ресницы займёт ваше место в расписании. ✨
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div>© 2025–2026 Lash Studio Sophie · Новогодний прайс-лист</div>
+      <div>С Новым&nbsp;годом и волшебных ресниц в 2026 ✨</div>
+    </footer>
+  </div>
+
+  <script>
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const tabId = btn.dataset.tab;
+
+        tabButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        tabContents.forEach((section) => {
+          if (section.id === tabId) {
+            section.classList.add("active");
+          } else {
+            section.classList.remove("active");
+          }
+        });
+      });
+    });
+
+    // по желанию можно повесить клик на кнопку записи (открыть Telegram/WhatsApp)
+    document.querySelector(".cta-button").addEventListener("click", () => {
+      // замените ссылку ниже на вашу
+      window.location.href = "https://t.me/"; // ваш @ник или ссылка на чат
+    });
+  </script>
+</body>
+</html>
